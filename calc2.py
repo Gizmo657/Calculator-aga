@@ -8,7 +8,7 @@ x=0
 y=0
 g=" "
 c=0
-
+    
 def make1():
     global c
     global x
@@ -107,11 +107,7 @@ def makeq():
     elif c==4:
         g=entr.get()
         y=int(g)
-        entr.delete(0, END)
-        tex["text"] = f"{x} : {y} ="
-        x=x//y
-        g=str(x)
-        entr.insert(0, g)
+        check0(x,y)
 
 def makec():
     x=0
