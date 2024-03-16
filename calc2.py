@@ -4,6 +4,19 @@ form1 = Tk()
 form1.title("Calc2")
 form1.geometry("260x350")
 
+def check0(x, y):
+    if y==0:
+        x=0
+        y=0
+        entr.delete(0, END)
+        tex["text"] = f"Ошибка: Деление на 0"
+    else:
+        entr.delete(0, END)
+        tex["text"] = f"{x} : {y} ="
+        x=x//y
+        g=str(x)
+        entr.insert(0, g)
+
 tex = ttk.Label()
 entr = ttk.Entry()
 bpl = ttk.Button(text="+", command=make1)
