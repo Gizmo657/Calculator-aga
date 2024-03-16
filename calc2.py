@@ -14,45 +14,72 @@ def make1():
     global x
     global y
     g=entr.get()
-    x=int(g)
-    entr.delete(0, END)
-    c=1
-    tex["text"] = f"{x} +"
+    if g.isdigit()==True:
+        x=int(g)
+        entr.delete(0, END)
+        c=1
+        tex["text"] = f"{x} +"
+    else:
+        x=0
+        y=0
+        entr.delete(0, END)
 
 def make2():
     global c
     global x
     global y
     g=entr.get()
-    x=int(g)
-    entr.delete(0, END)
-    c=2
-    tex["text"] = f"{x} -"
+    if g.isdigit()==True:
+        x=int(g)
+        entr.delete(0, END)
+        c=2
+        tex["text"] = f"{x} -"
+    else:
+        x=0
+        y=0
+        entr.delete(0, END)
 
 def make3():
     global c
     global x
     global y
     g=entr.get()
-    x=int(g)
-    entr.delete(0, END)
-    c=3
-    tex["text"] = f"{x} x"
+    if g.isdigit()==True:
+        x=int(g)
+        entr.delete(0, END)
+        c=3
+        tex["text"] = f"{x} x"
+    else:
+        x=0
+        y=0
+        entr.delete(0, END)
 
 def make4():
     global c
     global x
     global y
     g=entr.get()
-    x=int(g)
-    entr.delete(0, END)
-    c=4
-    tex["text"] = f"{x} :"
+    if g.isdigit()==True:
+        x=int(g)
+        entr.delete(0, END)
+        c=4
+        tex["text"] = f"{x} :"
+    else:
+        x=0
+        y=0
+        entr.delete(0, END)
 
 def makeq():
     global c
     global x
     global y
+    g=entr.get()
+    if g.isdigit()==False or c==0:
+        x=0
+        y=0
+        entr.delete(0, END)
+        c=0
+    tex["text"] = f""
     if c==1:
         g=entr.get()
         y=int(g)
