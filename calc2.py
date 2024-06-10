@@ -3,7 +3,8 @@ from tkinter import ttk
 
 form1 = Tk()
 form1.title("Calc2")
-form1.geometry("260x350")
+form1.geometry("260x250")
+form1.resizable(False, False)
 
 da = 0
 x = 0
@@ -15,8 +16,8 @@ def check0(x, y, da):
     if y == 0:
         if da == 0:
             entr.delete(0, END)
-            tex["text"] = "Ошибка: Деление на 0"
-        return "Ошибка деление на 0"
+            tex["text"] = ""
+        return "Ошибка деления на 0"
     else:
         if da == 0:
             entr.delete(0, END)
@@ -25,7 +26,7 @@ def check0(x, y, da):
             entr.insert(0, g)
         return x // y
 
-def plus1():
+def make1():
     global c, x
     g = entr.get()
     if g.isdigit():
@@ -37,7 +38,7 @@ def plus1():
     else:
         return False
 
-def minus2():
+def make2():
     global c, x
     g = entr.get()
     if g.isdigit():
@@ -49,7 +50,7 @@ def minus2():
     else:
         return False
 
-def mult3():
+def make3():
     global c, x
     g = entr.get()
     if g.isdigit():
@@ -61,7 +62,7 @@ def mult3():
     else:
         return False
 
-def div4():
+def make4():
     global c, x
     g = entr.get()
     if g.isdigit():
@@ -106,10 +107,10 @@ def makec():
 
 tex = ttk.Label(form1)
 entr = ttk.Entry(form1)
-bpl = ttk.Button(form1, text="+", command=plus1)
-bmin = ttk.Button(form1, text="-", command=minus2)
-bmul = ttk.Button(form1, text="x", command=mult3)
-bdiv = ttk.Button(form1, text=":", command=div4)
+bpl = ttk.Button(form1, text="+", command=make1)
+bmin = ttk.Button(form1, text="-", command=make2)
+bmul = ttk.Button(form1, text="x", command=make3)
+bdiv = ttk.Button(form1, text=":", command=make4)
 beq = ttk.Button(form1, text="=", command=makeq)
 bcl = ttk.Button(form1, text="CE", command=makec)
 
